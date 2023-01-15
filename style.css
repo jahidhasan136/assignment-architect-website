@@ -46,13 +46,13 @@ nav ul li a{
 .brand{
     margin: 0 auto;
     text-align: center;
-  
 }
 .brand img{
+    max-width: 1100px;
     margin-bottom: 40px;
 }
 .brand-content{
-    width: 872px;
+    max-width: 872px;
     margin: 0 auto;
     margin-bottom: 50px;
 }
@@ -62,6 +62,9 @@ nav ul li a{
 .brand-content p{
     color: var(--light-dark);
 }
+.brand-content h1, p{
+    margin-bottom: 32px;
+}
 .btn-primary{
     width: 180px;
     height: 64px;
@@ -70,9 +73,6 @@ nav ul li a{
     border: 0;
     font-size: 20px;
     border-radius: 5px;
-}
-.brand-content h1, p{
-    margin-bottom: 32px;
 }
 
 /* MAIN AREA */
@@ -93,7 +93,7 @@ nav ul li a{
     grid-row-gap: 20px;
 }
 .quick-content{
-    width: 537px;
+    max-width: 537px;
 }
 .quick-content h2{
     font-size: 45px;
@@ -121,9 +121,10 @@ nav ul li a{
     gap: 146px;
     justify-content: center;
     margin-bottom: 130px;
+
 }
 .features-content{
-    width: 586px;
+    max-width: 586px;
 }
 .features-content h2{
     border-left: var(--border-left);
@@ -174,7 +175,7 @@ nav ul li a{
     margin-bottom: 24px;
 }
 .facts p{
-    width: 550px;
+    max-width: 550px;
     color: var(--light-dark);
 }
 .fact-box{
@@ -192,9 +193,15 @@ nav ul li a{
     border: 1px solid var(--orange);
     padding: 35px 45px;
     border-radius: 8px;
+    transition: 1s ease;
 }
 .box-content img{
     margin-bottom: 10px;
+}
+.box-content:hover{
+    transform: scale(1.1);
+    transition: 1s ease;
+    opacity: 0.6;
 }
 .box-content h2{
     margin-bottom: 5px;
@@ -217,6 +224,7 @@ nav ul li a{
     margin-bottom: 130px;
 }
 .sponspors h2{
+    font-size: 45px;
     margin-bottom: 24px;
 }
 .sponspors p{
@@ -227,9 +235,66 @@ nav ul li a{
     display: flex;
     gap: 155px;
 }
+.sponspors-company img{
+    filter: grayscale(100%)
+}
+
+
+/* LATEST POST */
+
+
+.latest{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.latest h2{
+    font-size: 45px;
+    margin-bottom: 70px;
+}
+.post-card{
+    display: flex;
+    gap: 30px;
+}
+.post{
+    max-width: 300px;
+    height: 400px;
+    box-shadow: rgba(0,0,0,.25) 0 3px 11px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.post img{
+    overflow: hidden;
+    max-width: 300px;
+    margin-bottom: 10px;
+    height: 200px;
+    transition: all 1.1s ease;
+}
+.post:hover img{
+    transform: scale(1.1);
+}
+.post-content{
+    padding: 0 20px;
+}
+.post-content .marketing{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: var(--light-dark);
+}
+.post-content p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+
+
+/* FOOTER AREA */
 
 footer{
-    width: 1400px;
+    max-width: 1400px;
     background-color: var(--primary);
     margin: 0 auto;
     border-radius: 8px;
@@ -238,3 +303,106 @@ footer{
     margin-bottom: 200px;
     padding: 39px 410px;
 }
+
+
+/* RESPONSIVE FOR MOBILE DEVICE */
+
+@media screen and (max-width: 480px) {
+    nav{
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    nav ul{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .brand-content h1{
+        font-size: 50px;
+    }
+    .brand-content p{
+        font-size: 14px;
+    }
+    .brand-content h1, p{
+        margin-bottom: 20px;
+    }
+    .brand img{
+        width: 300px;
+    }
+    .quick{
+        flex-direction: column;
+        margin-bottom: 70px;
+    }
+    .quick h2{
+        font-size: 40px;
+    }
+    .quick-img-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .quick-img-grid img{
+        width: 300px;
+    }
+    .features{
+        gap: 50px;
+        flex-direction: column;
+        margin-bottom: 70px;
+    }
+    .features-content h2{
+        font-size: 40px;
+    }
+    .features-content p{
+        font-size: 14px;
+    }
+    .features-architect img{
+        width: 300px;
+    }
+    .features button{
+        margin-top: 0;
+        width: 200px;
+        height: 100px;
+        margin-left: 0;
+    }
+    .year{
+        text-align: center;
+    }
+    .features .year-button{
+        font-size: 40px;
+    }
+    .facts{
+        margin-bottom: 50px;
+    }
+    .facts h2{
+        margin-bottom: 15px;
+    }
+    .fact-box{
+        margin-bottom: 100px;
+    }
+    .box{
+        flex-direction: column;
+        gap: 45px;
+    }
+    .box-content{
+        width: 200px;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .box-content h2{
+        font-size: 30px;
+    }
+    .sponspors{
+        text-align: center;
+    }
+    .sponspors-company{
+        flex-direction: column;
+        gap: 70px;
+    }
+    .post-card{
+        flex-direction: column;
+    }
+    .footer p{
+        padding: 10px 20px;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+}
+
